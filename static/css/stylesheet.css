@@ -1,0 +1,50 @@
+/* purple = #ba87f5 */
+/* black = #121212 */
+/* white = #FFFFFF at .87 or .6 opacity */
+
+body {
+  background-color: #ffffff;
+  color: #121212;
+  opacity: 0.87;
+  margin: 10px;
+  padding: 10px;
+}
+
+h1 {
+  color: #ba87f5;
+}
+
+#friends {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#friends td,
+#friends th {
+  border: 1px solid #ba87f5;
+  padding: 8px;
+}
+
+#friends tr:nth-child(even) {
+  background-color: light-gray;
+  opacity: 0.6;
+  color: black;
+}
+
+#friends tr:hover {
+  background-color: #ba87f5;
+  color: black;
+}
+
+#friends th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ba87f5;
+  color: white;
+}
+
+input[readonly] {
+  background-color: #dcdcdc;
+}

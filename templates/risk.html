@@ -1,0 +1,76 @@
+{% extends 'base.html' %} {% block body %}
+
+<form action="/calculate_risk" method="POST">
+  <fieldset>
+    <legend>Contact Information</legend>
+
+    <label for="org_name">
+      Organization Name
+      <input type="text" id="org_name" name="org_name" autofocus />
+    </label>
+
+    <label for="email">
+      Organization Concact Email
+      <input type="text" id="org_email" name="org_email" />
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Risk Assessment</legend>
+
+    <label>Which industy is your business in?</label>
+    <label for="industry">
+      <select name="industry" id="industry">
+        <option value="">-- choose one --</option>
+        <option value="4">Manufacturing</option>
+        <option value="4">Finance</option>
+      </select>
+    </label>
+    <br /><br />
+    <label>Do you routinely test your backup systems?</label>
+    <label for="bu_yes">
+      <input type="radio" id="bu_yes" name="backup_svr" value="1" /> Yes
+    </label>
+    <label for="bu_no">
+      <input type="radio" id="bu_no" name="backup_svr" value="5" /> No
+    </label>
+    <br /><br />
+    <label>Have you ever purchased a penetration test before?</label>
+    <label for="pt_yes">
+      <input type="radio" id="pt_yes" name="pen_test" value="1" /> Yes
+    </label>
+    <label for="pt_no">
+      <input type="radio" id="pt_no" name="pen_test" value="5" /> No
+    </label>
+
+    <br /><br />
+    <label
+      >Is your office vulnerable to any of the following natural
+      disasters?</label
+    >
+    <input
+      type="checkbox"
+      id="hurricane"
+      name="natural_disasters"
+      value="hurricane"
+    />
+    <label for="hurricane"> Hurricanes</label>
+    <input
+      type="checkbox"
+      id="tornado"
+      name="natural_disasters"
+      value="tornado"
+    />
+    <label for="tornado"> Tornadoes</label><br />
+    <input type="checkbox" id="flood" name="natural_disasters" value="flood" />
+    <label for="flood"> Flood</label><br />
+  </fieldset>
+
+  <input type="submit" id="submit" value="Calculate My Risk Score" />
+</form>
+
+{% if org_details %} {{org_details}} {% endif %}
+<br />
+
+{% if risk_value %} Your risk score is: {{risk_value}} {% endif %} {% endblock
+%}
